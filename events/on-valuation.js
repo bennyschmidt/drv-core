@@ -12,6 +12,7 @@ const {
 } = require('../strings');
 
 module.exports = async ({
+  priceApi,
   contract,
   drvValue,
   usdValue

@@ -23,7 +23,11 @@ module.exports = async ({
     status
   };
 
-  const { price } = await onValuation(transaction);
+  const { price } = await onValuation({
+    priceApi,
+
+    ...transaction
+  });
 
   transaction.price = price;
 
