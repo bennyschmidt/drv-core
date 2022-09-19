@@ -38,4 +38,4 @@ Validations are lifecycle hooks that run before a transaction is completed, and 
 
 ## Enforcements
 
-Enforcements are lifecycle hooks that run after a transaction has completed. The [Broadcast](https://github.com/exactchange/drv-core/blob/master/enforcements/enforcements.broadcast.js) enforcement included in this distribution ensures that a transaction is broadcasted to peer lists.
+Enforcements are lifecycle hooks that run after a transaction has completed. The [Broadcast](https://github.com/bennyschmidt/drv-core/blob/master/enforcements/enforcements.broadcast.js) enforcement included in this distribution ensures that a transaction is broadcasted to peer lists.
