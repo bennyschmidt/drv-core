@@ -2,7 +2,7 @@
 
 ## Privacy
 
-DRV records may be announced publicly in the form of a publicly-viewable blockchain that can be read from a number of random peers. Only records with a high confidence level that are corroborated in multiple instances of DRV should be included, although transactions that were recently added may be shown in an unverified state until their validation process is complete. The public can see the amount and kind of currency transferred in every transaction, but the identities of the parties involved are obfuscated behind their respective address hashes in order to maintain a level of individual privacy.
+DRV records may be announced publicly in the form of a publicly-viewable blockchain that can be read from a number of random peers. Only records with a high confidence level that are validated in multiple instances of DRV should be included, although transactions that were recently added may be shown in an unverified state until their validation process is complete. The public can see the amount and kind of currency transferred in every transaction, but the identities of the parties involved are obfuscated behind their respective address hashes in order to maintain a level of individual privacy.
 
 ## Dereva
 
