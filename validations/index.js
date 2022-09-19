@@ -1,7 +1,7 @@
-const record = require('./validations.record');
-const nonFungibleRecord = require('./validations.nonFungibleRecord');
+const DRV100 = require('./drv100');
+const DRV200 = require('./drv200');
 
 module.exports = {
-  record,
-  nonFungibleRecord
+  DRV100,
+  DRV200
 };

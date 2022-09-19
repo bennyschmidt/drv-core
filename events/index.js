@@ -1,20 +1,9 @@
-/*
- * Events (default)
- */
+const createOnTransaction = require('./create-on-transaction');
+const onTransaction = require('./on-transaction');
+const onValuation = require('./on-valuation');
 
-(() => {
-
-  /*
-  Dependencies
-  */
-
-  const transactionEvents = require('./events.transaction');
-
-  /*
-  Exports
-  */
-
-  module.exports = {
-    transactionEvents
-  };
-})();
+module.exports = {
+  createOnTransaction,
+  onTransaction,
+  onValuation
+};

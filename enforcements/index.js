@@ -1,4 +1,4 @@
-const broadcast = require('./enforcements.broadcast');
+const broadcast = require('./broadcast');
 
 module.exports = {
   broadcast
