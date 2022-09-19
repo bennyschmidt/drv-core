@@ -41,6 +41,15 @@
     entitled: Text[];
   }
 
+  type Collectible = Certificate & {
+    vintage: number;
+    make: string;
+    model: string;
+    condition: string;
+    appraisal: number;
+    appraisalCurrency: "USD";
+  }
+
   type Comment = Claim & {
     upvotes: number;
   }

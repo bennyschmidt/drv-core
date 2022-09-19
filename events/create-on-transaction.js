@@ -1,3 +1,5 @@
+const onValuation = require('./on-transaction');
+
 module.exports = ({ transactionApi, priceApi }) => ({
   hash,
   next,

@@ -1,4 +1,4 @@
-const onValuation = require('./onValuation');
+const onValuation = require('./on-valuation');
 
 module.exports = async ({
   transactionApi,
