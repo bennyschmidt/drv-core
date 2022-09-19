@@ -22,9 +22,9 @@ When performing a basic balance inquiry or when transferring Dereva to another u
 
 Contracts are agreements between participants in a transaction that are specified in the request by their string name (e.g. `{ contract: "DRV100" }`). Currently there are 2 kinds of contracts:
 
-**DRV100 (Record)**
+**[DRV100](https://github.com/bennyschmidt/DRV100) (Record)**
 
-**DRV200 (Non-Fungible Record)**
+**[DRV200](https://github.com/bennyschmidt/DRV200) (Non-Fungible Record)**
 
 Contracts can encompass just one, or many transactions, and even establish long-term payment schedules involving various layers of validation and user interaction.
 
