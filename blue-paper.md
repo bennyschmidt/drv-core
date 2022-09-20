@@ -41,6 +41,15 @@
     entitled: Text[];
   }
 
+  type Collectible = Certificate & {
+    vintage: number;
+    make: string;
+    model: string;
+    condition: string;
+    appraisal: number;
+    appraisalCurrency: "USD";
+  }
+
   type Comment = Claim & {
     upvotes: number;
   }
@@ -76,7 +85,7 @@ A *Proof of Value* is asserted whenever DRV is asserted to have some USD value. 
 
 Another way to assert value is to sell a product normally purchased in USD in DRV. Let's say you've sold a number of products online for 10.00 USD each, and now you want to accept crypto payments. For every sale where you accept DRV as payment, value will be asserted for the sale amount.
 
-Proof of Value occurs in the [`onTransaction`](./events/events.transaction.js) lifecycle method, which is invoked after the transaction has been inserted into the blockchain.
+Proof of Value occurs in the [`onTransaction`](./events/on-transaction.js) lifecycle method, which is invoked after the transaction has been inserted into the blockchain.
 
 **Assertion Misvaluations, Rejections, & Corrected Proofs of Value**
 
@@ -85,7 +94,7 @@ A Proof of Value Assertion will be rejected if the assertion exceeds the Deviati
 1. `usdAmount` must be higher than `0.0000000001`, and is adjusted by the `drvAmount` it is asserted against:
 
     ```
-    // ./events/events.transaction.js
+    // ./events/on-transaction.js
 
     const usdValue = parseFloat(
       Math.max(
@@ -98,7 +107,7 @@ A Proof of Value Assertion will be rejected if the assertion exceeds the Deviati
 2. The difference between the DRV `price` and the adjusted `usdValue` must not exceed a Standard Deviation of the average price.
 
     ```
-    // ./events/events.transaction.js
+    // ./events/on-transaction.js
 
     const priceDifference = parseFloat(
       Math.abs(priceApi.price - usdValue)
@@ -129,7 +138,7 @@ const deviationRate = priceApi.price * .15;
 As a merchant or trader, you can assert any value you want, but if your assertion exceeds the Deviation Rate, the proof is rejected, corrected, and re-submitted at the Maximum Allowable Deviation. For example, if you sell 1 DRV valued at 10.00 USD for only 0.01 USD, the transaction will succeed, but will result in a misvaluation, and the blockchain will re-attempt valuing it at the minimum value allowed (in this case 8.50 USD). If it's valued too high, for example 1 DRV valued at 10.00 USD is sold for 100.00 USD, it will attempt to value it at the highest possible amount (in this case 11.50), as shown:
 
 ```
-// ./events/events.transaction.js
+// ./events/on-transaction.js
 
 const modifier = (
   usdValue < priceApi.price
@@ -144,5 +153,5 @@ price = parseFloat(
 ```
 
 * * *
-DRV is based on: [bennyschmidt/linked-list](https://github.com/bennyschmidt/linked-list)
+DRV was originally based on: [bennyschmidt/linked-list](https://github.com/bennyschmidt/linked-list)
 * * *

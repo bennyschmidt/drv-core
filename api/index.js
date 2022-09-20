@@ -1,13 +1,7 @@
-/*
- * API (default)
- */
+const priceApi = require('./price');
+const transactionApi = require('./transaction');
 
-(() => {
-  const priceApi = require('./api.price');
-  const transactionApi = require('./api.transaction');
-
-  module.exports = {
-    priceApi,
-    transactionApi
-  };
-})();
+module.exports = {
+  priceApi,
+  transactionApi
+};

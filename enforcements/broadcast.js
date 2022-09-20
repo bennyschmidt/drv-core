@@ -1,9 +1,5 @@
 /* eslint-disable no-magic-numbers */
 
-/*
-Enforcements.Broadcast
- */
-
 const fetch = require('node-fetch-commonjs');
 
 const { COMPLETE, PENDING } = require('../statuses');
