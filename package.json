@@ -9,7 +9,7 @@
   "dependencies": {
     "crypto-linked-list": "^1.0.3",
     "cryptography-utilities": "^0.0.2",
-    "diamond-search-and-store": "^0.1.9",
+    "diamond-search-and-store": "^0.2.4",
     "dotenv": "^10.0.0",
     "node-fetch-commonjs": "^3.1.1",
     "node-service-library": "^1.0.7"
