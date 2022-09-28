@@ -1,6 +1,6 @@
 /* eslint-disable no-magic-numbers */
 
-const dss = require('../diamond');
+const dss = require('..');
 
 const { TREASURY_ADDRESS } = require('../strings');
 const { ROOT_VALUE } = require('../numbers');
