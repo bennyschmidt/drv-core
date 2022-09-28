@@ -1,10 +1,9 @@
 /* eslint-disable no-magic-numbers */
 
-const dss = require('../diamond');
+const dss = require('diamond-search-and-store');
+const { LinkedList } = require('crypto-linked-list');
 
 let transactions;
-
-const { LinkedList } = require('crypto-linked-list');
 
 (async () => {
   transactions = new LinkedList();
