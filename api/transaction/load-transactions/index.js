@@ -1,9 +1,6 @@
 const dss = require('diamond-search-and-store');
-const { LinkedList } = require('crypto-linked-list');
 
-module.exports = async () => {
-  const transactions = new LinkedList();
-
+module.exports = async transactions => {
   let result = await dss.onHttpPost(
     {
       method: 'read',
@@ -40,8 +37,4 @@ module.exports = async () => {
 
     console.log('<DRV> :: Transactions loaded.');
   }
-
-  return {
-    transactions
-  };
 };
