@@ -1,6 +1,4 @@
-const { transactions } = require('..');
-
-module.exports = () => {
+module.exports = transactions => () => {
   if (!transactions) return [];
 
   let tail = transactions.head;

@@ -35,8 +35,6 @@ module.exports = async () => {
   // eslint-disable-next-line no-param-reassign
   result = result?.data?.data || [];
 
-  console.log('init result', result);
-
   if (result?.length) {
     result.forEach(transactions.add);
 

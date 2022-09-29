@@ -2,9 +2,7 @@
 
 const dss = require('diamond-search-and-store');
 
-const { transactions } = require('..');
-
-module.exports = async ({
+module.exports = transactions => async ({
   hash,
   next,
   senderAddress,

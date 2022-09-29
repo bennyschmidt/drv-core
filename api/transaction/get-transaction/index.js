@@ -1,5 +1,3 @@
-const { transactions } = require('..');
-
-module.exports = index => (
+module.exports = transactions => index => (
   transactions && transactions.itemAt(index).data
 );

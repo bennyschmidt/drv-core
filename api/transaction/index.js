@@ -1,15 +1,11 @@
-const createTransaction = require('./create-transaction');
-const getTransaction = require('./get-transaction');
-const getTransactions = require('./get-transactions');
-const init = require('./init');
+module.exports = transactions => {
+  const createTransaction = require('./create-transaction')(transactions);
+  const getTransaction = require('./get-transaction')(transactions);
+  const getTransactions = require('./get-transactions')(transactions);
 
-(async () => {
-  const { transactions } = await init();
-
-  module.exports = {
+  return {
     createTransaction,
     getTransaction,
-    getTransactions,
-    transactions
+    getTransactions
   };
-})();
+};
