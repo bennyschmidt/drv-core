@@ -17,8 +17,8 @@ const { RECORD, NON_FUNGIBLE_RECORD } = require('./strings');
 Backend
 */
 
-const transactionApi = require('./api/transaction')();
-const priceApi = require('./api/price')();
+const transactionApi = require('./api/transaction');
+const priceApi = require('./api/price');
 
 const onTransaction = require('./events/create-on-transaction')({
   transactionApi,
@@ -66,7 +66,7 @@ module.exports = http({
         inventory
       };
     },
-    transactions: () => transactionApi.getTransactions()
+    transactions: transactionApi.getTransactions
   },
   POST: {
     transaction: async ({

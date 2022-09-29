@@ -1,7 +1,7 @@
-const priceApi = require('./price');
-const transactionApi = require('./transaction');
+const price = require('./price');
+const transaction = require('./transaction');
 
 module.exports = {
-  priceApi,
-  transactionApi
+  price,
+  transaction
 };
