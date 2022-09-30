@@ -16,6 +16,7 @@ require('./api/transaction/load-transactions')(transactions);
 
 const transactionApi = require('./api/transaction')(transactions);
 const priceApi = require('./api/price');
+const fsApi = require('./api/fs');
 
 const onTransaction = require('./events/create-on-transaction')({
   transactionApi,
@@ -62,6 +63,7 @@ module.exports = http({
     transactions: transactionApi.getTransactions
   },
   POST: {
+    store: fsApi.store,
     transaction: async ({
       senderAddress,
       recipientAddress,
