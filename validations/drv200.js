@@ -2,4 +2,6 @@
 Validations.nonFungibleRecord
  */
 
-module.exports = () => Boolean(true);
+module.exports = ({ drvValue }) => (
+  typeof (drvValue) !== 'number'
+);

@@ -2,18 +2,21 @@
 
 const dss = require('diamond-search-and-store');
 
-module.exports = async ({ content }) => (
+module.exports = async ({
+  mediaAddress,
+  mediaType
+}) => (
   dss.onHttpPost(
     {
-      method: 'store',
+      method: 'search',
       body: {
-        media: content,
-        mediaType: 'json'
+        mediaAddress,
+        mediaType
       },
       route: {
         path: 'dss'
       },
-      path: 'store'
+      path: 'search'
     },
     {
       status: code => ({

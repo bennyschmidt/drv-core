@@ -63,6 +63,7 @@ module.exports = http({
     transactions: transactionApi.getTransactions
   },
   POST: {
+    search: fsApi.search,
     store: fsApi.store,
     transaction: async ({
       senderAddress,
