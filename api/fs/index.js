@@ -1,4 +1,4 @@
-const search = require('./store');
+const search = require('./search');
 const store = require('./store');
 
 module.exports = {
