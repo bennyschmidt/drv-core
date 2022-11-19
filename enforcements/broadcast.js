@@ -1,6 +1,6 @@
 /* eslint-disable no-magic-numbers */
 
-const fetch = require('node-fetch-commonjs');
+const fetch = require('node-fetch');
 
 const { COMPLETE, PENDING } = require('../statuses');
 
