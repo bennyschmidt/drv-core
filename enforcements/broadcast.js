@@ -1,7 +1,5 @@
 /* eslint-disable no-magic-numbers */
 
-const fetch = require('node-fetch');
-
 const { COMPLETE, PENDING } = require('../statuses');
 
 module.exports = async (transaction, peers) => {

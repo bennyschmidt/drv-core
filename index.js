@@ -1,7 +1,5 @@
 /* eslint-disable no-magic-numbers */
 
-require('dotenv').config();
-
 const { http } = require('node-service-library');
 const { LinkedList } = require('crypto-linked-list');
 const { generateUUID } = require('cryptography-utilities');

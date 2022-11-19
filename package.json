@@ -1,6 +1,6 @@
 {
   "name": "drv-core",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "scripts": {
     "start": "node index",
     "test": "node tests",
@@ -10,7 +10,6 @@
     "crypto-linked-list": "^1.0.3",
     "cryptography-utilities": "^0.0.2",
     "diamond-search-and-store": "^0.2.5",
-    "node-fetch": "^3.3.0",
     "node-service-library": "^1.0.7"
   },
   "devDependencies": {
