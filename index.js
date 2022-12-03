@@ -6,7 +6,12 @@ const { generateUUID } = require('cryptography-utilities');
 
 const { BAD_REQUEST } = require('./errors');
 const { ZERO } = require('./numbers');
-const { RECORD, NON_FUNGIBLE_RECORD } = require('./strings');
+
+const {
+  RECORD,
+  NON_FUNGIBLE_RECORD,
+  NON_FUNGIBLE_RECORD_UNIQUE
+} = require('./strings');
 
 const transactions = new LinkedList();
 
@@ -72,14 +77,10 @@ module.exports = http({
       peers = [],
       isTest = false
     }) => {
-      if (typeof (drvValue) !== 'number') {
-        // eslint-disable-next-line no-param-reassign
-        contract = NON_FUNGIBLE_RECORD;
-      }
-
-      const drv = contract === NON_FUNGIBLE_RECORD
-        ? drvValue
-        : Math.max(ZERO, drvValue);
+      const drv = (
+        contract === NON_FUNGIBLE_RECORD ||
+        contract === NON_FUNGIBLE_RECORD_UNIQUE
+      ) ? drvValue : Math.max(ZERO, drvValue);
 
       const hash = (
         transactionApi.getTransactions().pop()?.next ||
