@@ -26,6 +26,8 @@ Contracts are agreements between participants in a transaction that are specifie
 
 **[DRV200](https://github.com/bennyschmidt/DRV200) (Non-Fungible Record)**
 
+**[DRV201](https://github.com/bennyschmidt/DRV201) (Unique Non-Fungible Record)**
+
 Contracts can encompass just one, or many transactions, and even establish long-term payment schedules involving various layers of validation and user interaction.
 
 ## Validations
