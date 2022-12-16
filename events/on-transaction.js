@@ -35,11 +35,8 @@ module.exports = async ({
 
   if (!success) return;
 
-  const marketCap = await priceApi.getMarketCap();
-
   return {
     success,
-    price,
-    marketCap
+    price
   };
 };

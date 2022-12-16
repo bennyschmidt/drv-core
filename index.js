@@ -52,15 +52,11 @@ module.exports = http({
   GET: {
     price: async () => {
       const price = await priceApi.getPrice();
-      const marketCap = await priceApi.getMarketCap();
-      const inventory = await priceApi.getInventory();
       const price24hAgo = await getPrice24hAgo();
 
       return {
         price,
-        price24hAgo: price24hAgo || price,
-        marketCap,
-        inventory
+        price24hAgo: price24hAgo || price
       };
     },
     transactions: transactionApi.getTransactions
