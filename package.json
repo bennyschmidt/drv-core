@@ -1,6 +1,6 @@
 {
   "name": "drv-core",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "scripts": {
     "start": "node index",
     "test": "node tests",

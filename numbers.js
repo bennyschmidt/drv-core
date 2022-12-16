@@ -1,5 +1,5 @@
 module.exports = {
-  ROOT_VALUE: 100000,
+  ROOT_VALUE: 1,
   STANDARD_DEVIATION: 0.15,
   ZERO: 0.0000000001
 };
