@@ -5,7 +5,8 @@ module.exports = async transactions => {
     {
       method: 'read',
       body: {
-        collectionName: 'transactions'
+        collectionName: 'transactions',
+        page: 1
       },
       route: {
         path: 'dss'
