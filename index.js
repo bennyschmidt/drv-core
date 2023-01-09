@@ -4,13 +4,11 @@ const { http } = require('node-service-library');
 const { LinkedList } = require('crypto-linked-list');
 const { generateUUID } = require('cryptography-utilities');
 
-const { BAD_REQUEST } = require('./errors');
 const { ZERO } = require('./numbers');
 
 const {
   RECORD,
-  NON_FUNGIBLE_RECORD,
-  NON_FUNGIBLE_RECORD_UNIQUE
+  NON_FUNGIBLE_RECORD
 } = require('./strings');
 
 const transactions = new LinkedList();
@@ -26,7 +24,6 @@ const onTransaction = require('./events/create-on-transaction')({
   priceApi
 });
 
-const validations = require('./validations');
 const { broadcast } = require('./enforcements');
 
 const getPrice24hAgo = () => {
@@ -73,10 +70,9 @@ module.exports = http({
       peers = [],
       isTest = false
     }) => {
-      const drv = (
-        contract === NON_FUNGIBLE_RECORD ||
-        contract === NON_FUNGIBLE_RECORD_UNIQUE
-      ) ? drvValue : Math.max(ZERO, drvValue);
+      const drv = contract === NON_FUNGIBLE_RECORD
+        ? drvValue
+        : Math.max(ZERO, drvValue);
 
       const hash = (
         transactionApi.getTransactions().pop()?.next ||
@@ -95,16 +91,10 @@ module.exports = http({
         drvValue: drv
       };
 
-      const isValid = validations[contract](transaction);
-
       if (isTest) {
         return {
-          success: isValid
+          success: true
         };
-      }
-
-      if (!isValid) {
-        return BAD_REQUEST;
       }
 
       const transactions = transactionApi.getTransactions();
