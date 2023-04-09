@@ -16,6 +16,10 @@ Anyone can create their own token, or their own content protocol, by forking the
 
 `drv-core` broadcasts transactions to other nodes in the peer network, who run their own validation logic to determine if it should be entered into their blockchain instance or not. Because everyone installs the same blockchain, the validation logic should be identical. But if a host tampered with their local blockchain code, they may yield different validation results than other nodes. Implementing a protocol layer on top of `drv-core` (like Dereva) is thus usually necessary, and enforcing it should vary depending on how strict it needs to be, but it usually includes satisfying unit tests in order to be retained in peer lists.
 
+![drv-dereva-diagram](https://user-images.githubusercontent.com/45407493/230754918-3e27727e-407e-4908-be20-df75a9868962.png)
+
+## Consensus
+
 Anyone can determine the validity of a transaction against a certain confidence threshold by counting how many instances have validated it versus the total being queried. As more peers run a transaction, confidence is built, and upon a certain threshold determined by the user a transaction may be deemed valid.
 
 When performing a basic balance inquiry or when transferring Dereva to another user, like any other request the values are determined functionally - in other words, calculated at the time it's needed to be across a number of peer instances until the provided confidence threshold is met.
