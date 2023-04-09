@@ -2,13 +2,13 @@
 
 ## Privacy
 
-DRV records may be announced publicly in the form of a publicly-viewable blockchain that can be read from a number of random peers. Only records with a high confidence level that are validated in multiple instances of DRV should be included, although transactions that were recently added may be shown in an unverified state until their validation process is complete. The public can see the amount and kind of currency transferred in every transaction, but the identities of the parties involved are obfuscated behind their respective address hashes in order to maintain a level of individual privacy.
+DRV records may be announced publicly in the form of a publicly-viewable blockchain that can be read from a number of random peers. The public can see the amount and kind of currency transferred in every transaction, but the identities of the parties involved are obfuscated behind their respective address hashes in order to maintain a level of individual privacy.
 
-In non-fungible systems (like [Dereva](https://github.com/bennyschmidt/dereva)), any structured data stored in files behind blockchain records can be made viewable by the public, but like `drv-core`, the sender's & recipient's identities are still obfuscated. If the magnet URI is known, the file can be displayed in a browser (in JSON format).
+In non-fungible systems (like [Dereva](https://github.com/bennyschmidt/dereva)), any data stored in files on the blockchain can be made viewable by the public, but the sender's & recipient's identities are still obfuscated by default. If the magnet URI is known, the file can be displayed in a browser (in JSON format).
 
 ## Dereva
 
-[Dereva](https://github.com/bennyschmidt/dereva) is a deployable Node.js [service](https://github.com/bennyschmidt/node-service-library) that extends [`drv-core`](https://github.com/bennyschmidt/drv-core) with native content types and file storage, enabling robust non-fungible records in addition to fungible transactions. You can install & use it as a library, or deploy this code as a REST API. For fungible systems, it allows any user with quantifiable Dereva to alias & denominate their own token to sell or freely distribute.
+[Dereva](https://github.com/bennyschmidt/dereva) is a deployable Node.js [service](https://github.com/bennyschmidt/node-service-library) that extends basic ledger functionality with native content types and file storage, enabling robust non-fungible records in addition to fungible transactions. You can install & use it as a library, or deploy this code as a REST API. For fungible systems, it allows any user with quantifiable Dereva to alias & denominate their own token to sell or freely distribute.
 
 ## Decentralization
 
